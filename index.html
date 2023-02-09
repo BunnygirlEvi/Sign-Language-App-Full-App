@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Emotion Detector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="heading">
+        <h3 class="head" id="front-text">Sign Language App</h3>
+        <br />
+        <p class="head">
+          The Sign Language App benefits anyone will use this to pick up what
+          each sign represents!
+        </p>
+      </div>
+      <p style="font-size: 22px">
+        Take a photo to generate what we think your emotion is!
+        <br />
+        <b>Take a photo of a sign to know what letter it represents</b>
+      </p>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <label>Webcam View - </label>
+        <div id="camera"></div>
+        <button onclick="take_snapshot();" class="btn btn-warning">
+          Capture Image
+        </button>
+      </div>
+
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <label>Prediction of what your sign is - </label>
+          <p class="sign_name" id="result_sign_name"></p>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <label>Snapshot - </label>
+          <div id="result"></div>
+          <button onclick="check();" class="btn btn-success">
+            Predict sign
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
